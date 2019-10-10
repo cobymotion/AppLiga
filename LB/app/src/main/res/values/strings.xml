@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">LB</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">LB</string>
+    <string name="nav_header_subtitle">Liga de Basquetbol</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Configuraciones</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_equipo">Equipos</string>
+    <string name="menu_salir">Salir</string>
+    <string name="menu_partidos">Partidos</string>
+    <string name="menu_puntos">Puntos</string>
+</resources>
