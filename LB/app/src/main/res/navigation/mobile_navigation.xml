@@ -12,26 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_equipo"
         android:name="com.example.lb.ui.gallery.GalleryFragment"
         android:label="@string/menu_equipo"
         tools:layout="@layout/fragment_gallery" />
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.lb.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_salir"
-        tools:layout="@layout/fragment_slideshow" />
 
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.example.lb.ui.share.ShareFragment"
-        android:label="@string/menu_partidos"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.example.lb.ui.send.SendFragment"
-        android:label="@string/menu_puntos"
-        tools:layout="@layout/fragment_send" />
 </navigation>

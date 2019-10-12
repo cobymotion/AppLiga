@@ -32,7 +32,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -55,25 +55,17 @@ public class MainActivity extends AppCompatActivity{
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_equipo, R.id.nav_salir)
+                R.id.nav_home, R.id.nav_equipo)
                 .setDrawerLayout(drawer)
                 .build();
+
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                Log.e("PRUEBA","Esto es una prueba");
-                switch (menuItem.getItemId())
-                {
-                     case R.id.nav_home:
-                         Toast.makeText(MainActivity.this,"Se presiono",Toast.LENGTH_LONG).show();
-                }
-                return false;
-            }
-        });
+
+
+
     }
 
     @Override
@@ -91,47 +83,10 @@ public class MainActivity extends AppCompatActivity{
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        FragmentManager fragmentManager;
-        FragmentTransaction fragmentTransaction;
-        //int id=item.getItemId();
-
-        switch (item.getItemId()) {
-            case R.id.nav_home:
-                Log.e("Algo pasa","H" + item.getTitle());
-                HomeFragment homeFragment = new HomeFragment();
-                fragmentTransaction =getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment,homeFragment);
-                fragmentTransaction.commit();
-                break;
-            case R.id.nav_equipo:
-                Log.e("Algo pasa","E" + item.getTitle());
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                GalleryFragment galleryFragment = new GalleryFragment();
-                fragmentTransaction.replace(R.id.nav_host_fragment, galleryFragment);
-                fragmentTransaction.commit();
-                break;
-            case R.id.nav_salir:
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                SlideshowFragment slideshowFragment = new SlideshowFragment();
-                fragmentTransaction.replace(R.id.nav_host_fragment, slideshowFragment);
-                fragmentTransaction.commit();
-                break;
-            case R.id.action_settings:
-                Log.e("Algo pasa","ASFDSGSGFDHDHDGHFGJGFJFJFHJFGJGFJGFJGFJ " + item.getTitle());
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                GalleryFragment galleryFragment2 = new GalleryFragment();
-                fragmentTransaction.replace(R.id.nav_host_fragment, galleryFragment2);
-                fragmentTransaction.commit();
-                break;
-        }
+        if(item.getItemId()==R.id.nav_exit)
+            Log.e("PRUEBA","asaasasdasd");
         return super.onOptionsItemSelected(item);
     }
-
-
 }
